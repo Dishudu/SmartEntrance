@@ -1,0 +1,19 @@
+# Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.whl
+.env
+.venv/
+venv/
+
+# Face photos
+faces/
+*.jpg
+
+#env vars
+*.config
