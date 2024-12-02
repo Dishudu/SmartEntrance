@@ -8,8 +8,8 @@ from pathlib import Path
 import sys
 
 config = configparser.ConfigParser()
-PATH = Path(__file__).resolve().parent
-config.read(str(PATH) + '/.config')
+BASE_DIR = Path(__file__).resolve().parent.parent
+config.read(str(BASE_DIR) + 'aiogram/.config')
 
 BOT_TOKEN = config["Telegram"]["bot_token"]
 
@@ -23,5 +23,6 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
 # Папка для сохранения изображений
+
 IMAGE_FOLDER = "shared/faces"
 os.makedirs(IMAGE_FOLDER, exist_ok=True)

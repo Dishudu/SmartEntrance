@@ -3,10 +3,12 @@ import numpy as np
 import json
 import cv2
 from get_hash import save_face_hash
+from pathlib import Path
 
-# Предполагаем, что изображения хранятся в папке
-IMAGE_FOLDER = "./shared/faces"
-ENCODINGS_FILE = "./shared/face_encodings.json"
+# Создание путей с использованием pathlib
+BASE_DIR = Path(__file__).resolve().parent.parent
+IMAGE_FOLDER = BASE_DIR / "shared" / "faces"
+ENCODINGS_FILE = BASE_DIR / "shared" / "face_encodings.json"
 
 if __name__ == "__main__":
     save_face_hash(IMAGE_FOLDER=IMAGE_FOLDER,

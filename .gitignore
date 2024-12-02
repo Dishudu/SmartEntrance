@@ -14,6 +14,7 @@ venv/
 # Face photos
 faces/
 *.jpg
+*.json
 
 #env vars
 *.config
