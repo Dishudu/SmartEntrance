@@ -6,11 +6,10 @@ from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command
 import subprocess
 
-@dp.message(Command("restart"))
-async def cmd_restart(message: types.Message):
+@dp.message(commands=["restart_recognition"])
+async def restart_recognition(message: types.Message):
     try:
-        # Перезапуск через supervisorctl
-        subprocess.run(["sudo", "supervisorctl", "restart", "face_recognition"], check=True)
-        await message.answer("Процесс распознавания лиц успешно перезапущен.")
+        subprocess.run(["supervisorctl", "restart", "face_recognition"], check=True)
+        await message.answer("Скрипт распознавания лиц успешно перезапущен!")
     except subprocess.CalledProcessError as e:
         await message.answer(f"Ошибка при перезапуске: {e}")

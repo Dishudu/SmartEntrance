@@ -9,7 +9,7 @@ import sys
 
 config = configparser.ConfigParser()
 BASE_DIR = Path(__file__).resolve().parent.parent
-config.read(str(BASE_DIR) + 'aiogram/.config')
+config.read(BASE_DIR / 'aiogram' / '.config')
 
 BOT_TOKEN = config["Telegram"]["bot_token"]
 
@@ -23,6 +23,6 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
 # Папка для сохранения изображений
+IMAGE_FOLDER = BASE_DIR / "shared" / "faces"
 
-IMAGE_FOLDER = "shared/faces"
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
