@@ -94,7 +94,7 @@ try:
                 GPIO.output(LED_PIN, GPIO.LOW)   # Выключить светодиод
                 
             # Отображение видео
-            cv2.imshow('Video', frame)
+            # cv2.imshow('Video', frame)
             
             # Остановка по нажатию клавиши 'q'
             if cv2.waitKey(1000) & 0xFF == ord('q'):
