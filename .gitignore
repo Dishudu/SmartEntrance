@@ -7,7 +7,7 @@ __pycache__/
 dist/
 build/
 *.whl
-.env
+# .env
 .venv/
 venv/
 
@@ -17,4 +17,4 @@ faces/
 *.json
 
 #env vars
-*.config
+# *.config
