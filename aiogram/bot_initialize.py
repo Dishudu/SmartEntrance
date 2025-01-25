@@ -14,9 +14,9 @@ config.read(BASE_DIR / 'aiogram' / '.config')
 BOT_TOKEN = config["Telegram"]["bot_token"]
 
 logging.basicConfig(
-    filename='bot_errors.log',  # Имя файла для записи логов
-    level=logging.ERROR,         # Уровень логирования
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Формат записи
+    filename='bot_errors.log', 
+    level=logging.ERROR,         
+    format='%(asctime)s - %(levelname)s - %(message)s',
 )
 
 bot = Bot(token=BOT_TOKEN)

@@ -7,7 +7,6 @@ from aiogram.filters.state import StateFilter
 
 @dp.message(StateFilter(UploadImage.waiting_for_name))
 async def handle_name(message: types.Message, state: FSMContext):
-    # Получаем данные из состояния
     data = await state.get_data()
     temp_path = data.get("temp_path")
 
@@ -18,7 +17,7 @@ async def handle_name(message: types.Message, state: FSMContext):
         return
 
     # Формируем путь для сохранения файла
-    extension = os.path.splitext(temp_path)[1]  # Сохраняем оригинальное расширение
+    extension = os.path.splitext(temp_path)[1]  # Сохранение оригинального расширения
     final_path = os.path.join(IMAGE_FOLDER, f"{user_filename}{extension}")
 
     # Переименовываем файл
@@ -26,5 +25,4 @@ async def handle_name(message: types.Message, state: FSMContext):
 
     await message.answer(f"Файл успешно сохранён как: {user_filename}{extension}")
 
-    # Очистка состояния
     await state.clear()
